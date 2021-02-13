@@ -1,19 +1,20 @@
+using System;
+
 namespace DesignPatterns
 {
     public class CalculadorDeDescontos
     {
-        public double Calcular(Orcamento orcamento)
+        public void Calcular(Orcamento orcamento)
         {
-            if (orcamento.Itens.Count > 3)
-            {
-                return orcamento.Valor * 0.1;
-            }
-            else if (orcamento.Valor > 200)
-            {
-                return orcamento.Valor * 0.05;
-            }
+            IDesconto d1 = new DescontoPorMaisDeTresItens();
+            IDesconto d2 = new DescontoPorMaisDeDuzentosReais();
+            IDesconto d3 = new SemDesconto();
+
+            d1.Proximo = d2;
+            d2.Proximo = d3;
             
-            return 0;
+            double valor = d1.Descontar(orcamento);
+            Console.WriteLine(valor);
         }
     }
 }
