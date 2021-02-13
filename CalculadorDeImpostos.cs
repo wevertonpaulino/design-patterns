@@ -8,13 +8,17 @@ namespace DesignPatterns
         {
             if ("ICMS".Equals(imposto))
             {
-                double icms = orcamento.Valor * 0.1;
-                Console.WriteLine(icms);
+                var icms = new ICMS();
+                var valor = icms.Calcular(orcamento);
+
+                Console.WriteLine(valor);
             }
             else if ("ISS".Equals(imposto))
             {
-                double iss = orcamento.Valor * 0.06;
-                Console.WriteLine(iss);
+                var iss = new ISS();
+                var valor = iss.Calcular(orcamento);
+                
+                Console.WriteLine(valor);
             }
         }
     }
