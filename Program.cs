@@ -6,7 +6,11 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var orcamento = new Orcamento(1000);
+            var calculadorDeImpostos = new CalculadorDeImpostos();
+
+            calculadorDeImpostos.Calcular(orcamento, "ICMS");
+            calculadorDeImpostos.Calcular(orcamento, "ISS");
         }
     }
 }
