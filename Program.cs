@@ -8,9 +8,11 @@ namespace DesignPatterns
         {
             var orcamento = new Orcamento(1000);
             var calculadorDeImpostos = new CalculadorDeImpostos();
+            var icms = new ICMS();
+            var iss = new ISS();
 
-            calculadorDeImpostos.Calcular(orcamento, "ICMS");
-            calculadorDeImpostos.Calcular(orcamento, "ISS");
+            calculadorDeImpostos.Calcular(orcamento, icms);
+            calculadorDeImpostos.Calcular(orcamento, iss);
         }
     }
 }

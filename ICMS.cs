@@ -1,6 +1,6 @@
 namespace DesignPatterns
 {
-    public class ICMS
+    public class ICMS : Imposto
     {
         public double Calcular(Orcamento orcamento)
         {
